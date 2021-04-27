@@ -158,15 +158,15 @@ for line in Lines:
       if (read_line == True):
         eee = h5_TAG()
         read_line = False
-    if ("####" in line):
+    elif ("####" in line):
       if (read_line == True):
         eee = h4_TAG()
         read_line = False
-    if ("###" in line):
+    elif ("###" in line):
       if (read_line == True):
         eee = h3_TAG()
         read_line = False
-    if ("##" in line):
+    elif ("##" in line):
       if (read_line == True):
         eee = h2_TAG()
         read_line = False
@@ -178,6 +178,9 @@ for line in Lines:
       if (read_line == True):
         eee = reg_TAG()
         read_line = False
+    elif (line == ""):
+      eee = ""
+      read_line = ""		
     else:
       eee = comment()
       read_line = False

@@ -43,6 +43,29 @@ for line in Lines:
           check = "**" + ress + "**"
           res = res + check
           res = res.replace(f"<**{ress}**>", "")
+      if ("%*" in ress):     
+        if ("*%" in ress):
+          if ("|" in ress):
+            spl_word = "|"
+            ref = res
+            ref = ref.partition("%*")[2]   
+            ref = ref.partition("|")[2]
+            split_string = ref.split("|", -1)
+
+            link = split_string[0]
+            text = split_string[1]
+            ress = "[" + link + "]" + "(" + text + ")"
+            ress = ress.replace("*%", "")
+            split_string = res.split("*%", -1)
+            print("LINK")
+            print(split_string)
+            print(ress)
+            print(link)
+            print(text)
+            res = res + ress
+            res = res.replace(f"%*|{link}|{text}*%", "")
+            print(res)
+          
       return "# " + res
     def h2_TAG():
       data = line

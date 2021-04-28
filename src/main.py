@@ -38,34 +38,37 @@ for line in Lines:
           start = "<**"
           end = "**>"
           check = ress[ress.find(start) + len(start):ress.rfind(end)]
-          ress = check.replace("<**", "")
-          ress = check.replace("**>", "")
+          ress = check.replace("<**", "", 1)
+          ress = check.replace("**>", "", 1)
           check = "**" + ress + "**"
           res = res + check
-          res = res.replace(f"<**{ress}**>", "")
-      if ("%*" in ress):     
-        if ("*%" in ress):
-          if ("|" in ress):
-            spl_word = "|"
-            ref = res
-            ref = ref.partition("%*")[2]   
-            ref = ref.partition("|")[2]
-            split_string = ref.split("|", -1)
+          res = res.replace(f"<**{ress}**>", "", 1)
+      if ("|" in ress):
+          resss = ress
+          start = "|"
+          end = "|"
+          check = resss[resss.find(start) + len(start):resss.rfind(end)]
+          resss = check.replace("|", "", 1)
+          resss = check.replace("|", "", 1)
+          if ("https://" in ress):
+            e_link = resss
+            link = "(" + resss + ")"
+          else:
+            e_link = resss
+            link = "(https://" + resss + ")" 
+          resss = ress
+          start = "{"
+          end = "}"
+          check = resss[resss.find(start) + len(start):resss.rfind(end)]
+          resss = check.replace("{", "", 1)
+          resss = check.replace("}", "", 1)
+          e_text = resss
+          text = "[" + resss + "]"
+          ress = ress.replace(f"|{e_link}|{{{e_text}}}", f"{text}{link}", 1)
+          ress = ress.replace("\n", "")
+          ress = ress.rstrip("\n")
+          res = ress
 
-            link = split_string[0]
-            text = split_string[1]
-            ress = "[" + link + "]" + "(" + text + ")"
-            ress = ress.replace("*%", "")
-            split_string = res.split("*%", -1)
-            print("LINK")
-            print(split_string)
-            print(ress)
-            print(link)
-            print(text)
-            res = res + ress
-            res = res.replace(f"%*|{link}|{text}*%", "")
-            print(res)
-          
       return "# " + res
     def h2_TAG():
       data = line
@@ -88,6 +91,31 @@ for line in Lines:
           check = "**" + ress + "**"
           res = res + check
           res = res.replace(f"<**{ress}**>", "")
+      if ("|" in ress):
+          resss = ress
+          start = "|"
+          end = "|"
+          check = resss[resss.find(start) + len(start):resss.rfind(end)]
+          resss = check.replace("|", "", 1)
+          resss = check.replace("|", "", 1)
+          if ("https://" in ress):
+            e_link = resss
+            link = "(" + resss + ")"
+          else:
+            e_link = resss
+            link = "(https://" + resss + ")" 
+          resss = ress
+          start = "{"
+          end = "}"
+          check = resss[resss.find(start) + len(start):resss.rfind(end)]
+          resss = check.replace("{", "", 1)
+          resss = check.replace("}", "", 1)
+          e_text = resss
+          text = "[" + resss + "]"
+          ress = ress.replace(f"|{e_link}|{{{e_text}}}", f"{text}{link}", 1)
+          ress = ress.replace("\n", "")
+          ress = ress.rstrip("\n")
+          res = ress
       return "## " + res
     def h3_TAG():
       data = line
@@ -110,6 +138,31 @@ for line in Lines:
           check = "**" + ress + "**"
           res = res + check
           res = res.replace(f"<**{ress}**>", "")
+      if ("|" in ress):
+          resss = ress
+          start = "|"
+          end = "|"
+          check = resss[resss.find(start) + len(start):resss.rfind(end)]
+          resss = check.replace("|", "", 1)
+          resss = check.replace("|", "", 1)
+          if ("https://" in ress):
+            e_link = resss
+            link = "(" + resss + ")"
+          else:
+            e_link = resss
+            link = "(https://" + resss + ")" 
+          resss = ress
+          start = "{"
+          end = "}"
+          check = resss[resss.find(start) + len(start):resss.rfind(end)]
+          resss = check.replace("{", "", 1)
+          resss = check.replace("}", "", 1)
+          e_text = resss
+          text = "[" + resss + "]"
+          ress = ress.replace(f"|{e_link}|{{{e_text}}}", f"{text}{link}", 1)
+          ress = ress.replace("\n", "")
+          ress = ress.rstrip("\n")
+          res = ress
       return "### " + res
     def h4_TAG():
       data = line
@@ -132,6 +185,31 @@ for line in Lines:
           check = "**" + ress + "**"
           res = res + check
           res = res.replace(f"<**{ress}**>", "")
+      if ("|" in ress):
+          resss = ress
+          start = "|"
+          end = "|"
+          check = resss[resss.find(start) + len(start):resss.rfind(end)]
+          resss = check.replace("|", "", 1)
+          resss = check.replace("|", "", 1)
+          if ("https://" in ress):
+            e_link = resss
+            link = "(" + resss + ")"
+          else:
+            e_link = resss
+            link = "(https://" + resss + ")" 
+          resss = ress
+          start = "{"
+          end = "}"
+          check = resss[resss.find(start) + len(start):resss.rfind(end)]
+          resss = check.replace("{", "", 1)
+          resss = check.replace("}", "", 1)
+          e_text = resss
+          text = "[" + resss + "]"
+          ress = ress.replace(f"|{e_link}|{{{e_text}}}", f"{text}{link}", 1)
+          ress = ress.replace("\n", "")
+          ress = ress.rstrip("\n")
+          res = ress
       return "#### " + res
     def h5_TAG():
       data = line
@@ -154,6 +232,31 @@ for line in Lines:
           check = "**" + ress + "**"
           res = res + check
           res = res.replace(f"<**{ress}**>", "")
+      if ("|" in ress):
+          resss = ress
+          start = "|"
+          end = "|"
+          check = resss[resss.find(start) + len(start):resss.rfind(end)]
+          resss = check.replace("|", "", 1)
+          resss = check.replace("|", "", 1)
+          if ("https://" in ress):
+            e_link = resss
+            link = "(" + resss + ")"
+          else:
+            e_link = resss
+            link = "(https://" + resss + ")" 
+          resss = ress
+          start = "{"
+          end = "}"
+          check = resss[resss.find(start) + len(start):resss.rfind(end)]
+          resss = check.replace("{", "", 1)
+          resss = check.replace("}", "", 1)
+          e_text = resss
+          text = "[" + resss + "]"
+          ress = ress.replace(f"|{e_link}|{{{e_text}}}", f"{text}{link}", 1)
+          ress = ress.replace("\n", "")
+          ress = ress.rstrip("\n")
+          res = ress
       return "#### " + res
     def reg_TAG():
       data = line
@@ -176,6 +279,31 @@ for line in Lines:
           check = "**" + ress + "**"
           res = res + check
           res = res.replace(f"<**{ress}**>", "")
+      if ("|" in ress):
+          resss = ress
+          start = "|"
+          end = "|"
+          check = resss[resss.find(start) + len(start):resss.rfind(end)]
+          resss = check.replace("|", "", 1)
+          resss = check.replace("|", "", 1)
+          if ("https://" in ress):
+            e_link = resss
+            link = "(" + resss + ")"
+          else:
+            e_link = resss
+            link = "(https://" + resss + ")" 
+          resss = ress
+          start = "{"
+          end = "}"
+          check = resss[resss.find(start) + len(start):resss.rfind(end)]
+          resss = check.replace("{", "", 1)
+          resss = check.replace("}", "", 1)
+          e_text = resss
+          text = "[" + resss + "]"
+          ress = ress.replace(f"|{e_link}|{{{e_text}}}", f"{text}{link}", 1)
+          ress = ress.replace("\n", "")
+          ress = ress.rstrip("\n")
+          res = ress
       return res
     if ("#####" in line):
       if (read_line == True):

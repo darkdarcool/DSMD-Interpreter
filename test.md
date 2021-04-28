@@ -1,2 +1,6 @@
-# Hello! %*|google.com|cool*%! This sucks[google.com](cool! This sucks)
+# Hello! [link to google!](https://google.com) Well, this is not a link
+
+[//]: # (How are you)
+
+This is not a link... [but this is!](https://google.com)
 

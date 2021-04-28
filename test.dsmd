@@ -1,1 +1,3 @@
-# (Hello! %*|google.com|cool*%! This sucks)
+# (Hello! |google.com|{link to google!} Well, this is not a link)
+How are you
+> (This is not a link... |google.com|{but this is!})

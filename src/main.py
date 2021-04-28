@@ -346,4 +346,4 @@ for line in Lines:
       file1.close()
     read_line = True
 
-     
+print("Parsed successfully!")

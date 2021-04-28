@@ -305,7 +305,33 @@ for line in Lines:
           ress = ress.rstrip("\n")
           res = ress
       return res
-    if ("#####" in line):
+    def code_TAG():
+      if ("$" in line):
+          resss = line
+          start = "$"
+          end = "$"
+          check = resss[resss.find(start) + len(start):resss.rfind(end)]
+          resss = check.replace("|", "", 1)
+          resss = check.replace("|", "", 1)
+          # data is in resss 
+          if ("[" and "]" in resss):
+            res = resss 
+            start = "["
+            end = "]"
+            check = res[res.find(start) + len(start):res.rfind(end)]
+            res = check.replace(f"[{check}]", "", 1)
+            res = check.replace(f"[{check}]", "", 1)
+            resss = resss.replace(f"[{check}]", "", 1)
+            if (";" in resss):
+              resss = resss.replace(";", ";\n")
+            return f"``` {res}\n{resss}\n```"
+          else:
+            raise Exception("No lang markdown syntax highlight was found. If you want to not have a lang syntax highlight, please put an empty [].")
+    if ("$" in line):
+      if (read_line == True):
+        eee = code_TAG()
+        read_line = False
+    elif ("#####" in line):
       if (read_line == True):
         eee = h5_TAG()
         read_line = False

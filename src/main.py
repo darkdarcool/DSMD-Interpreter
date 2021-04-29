@@ -260,7 +260,7 @@ for line in Lines:
       return "#### " + res
     def reg_TAG():
       data = line
-      spl_word = '> '
+      spl_word = '>'
       try:
         res = data.partition(spl_word)[2]   
         res = data.partition("(")[2]

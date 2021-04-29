@@ -7,7 +7,7 @@
 Just put a link to a seperate md below in the tutorials chunk
 
 # (Tutorial)
-> (PUT A TUTORIAL MD LINK HERE LOL)
+> (You can go |https://github.com/whippingdot/Language-Tutorials/tree/main/DSMD|{here} to see the tutorial. You wil have everything from average tags to covered links. See you there!)
 
 Just put down the pip module thing, and the DSMDconfig.json stuff. Use the import json thing to parse their data.
 

@@ -1,21 +1,22 @@
 import os
-fp = input("What is the file path?(include the .dsmd)\n")
-if (".dsmd" in fp):
-  pass 
-else:
-  raise Exception("That is not a dsmd file.")
+def parse(fp):
 
- 
+  if (".dsmd" in fp):
+    pass 
+  else:
+    raise Exception("That is not a dsmd file.")
+
+#fp = "README.dsmd"
 # Using readlines()
-file1 = open(f'{fp}', 'r')
-eee = fp.replace('.dsmd', '')
-file2 = open(f'{eee}.md', 'w')
-file2.close()
-Lines = file1.readlines()
-read_line = True
-count = 0
-# Strips the newline character
-for line in Lines:
+  file1 = open(f'{fp}', 'r')
+  eee = fp.replace('.dsmd', '')
+  file2 = open(f'{eee}.md', 'w')
+  file2.close()
+  Lines = file1.readlines()
+  read_line = True
+  count = 0
+  # Strips the newline character
+  for line in Lines:
     count += 1
     def comment():
       data = line 
@@ -213,7 +214,7 @@ for line in Lines:
       return "#### " + res
     def h5_TAG():
       data = line
-      spl_word = '####'
+      spl_word = '#####'
       try:
         res = data.partition(spl_word)[2]   
         res = data.partition("(")[2]
@@ -257,7 +258,7 @@ for line in Lines:
           ress = ress.replace("\n", "")
           ress = ress.rstrip("\n")
           res = ress
-      return "#### " + res
+      return "##### " + res
     def reg_TAG():
       data = line
       spl_word = '>'
@@ -371,5 +372,5 @@ for line in Lines:
       file1.write("\n\n")
       file1.close()
     read_line = True
-
-print("Parsed successfully!")
+  print("Parsed successfully!")
+#parse("README.dsmd")

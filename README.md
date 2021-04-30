@@ -10,21 +10,36 @@ You're looking at an example! This entire README, is created is DSMD. You might 
 
 [//]: # ()
 
-[//]: # (Just put a link to a seperate md below in the tutorials chunk)
+# Usage
+
+[//]: # ()
+
+To use `DSMD`. You can install out beta version in pip:
+
+``` bash
+pip install DSMD
+```
+
+[//]: # ()
+
+Then your python code:
+
+[//]: # ()
+
+``` python
+from DSMD import parse;
+parse("my_dsmd_file.dsmd")
+```
+
+[//]: # ()
+
+Then in lightning fast speed, you can see it shoot out a MD file with your code!
 
 [//]: # ()
 
 # Tutorial
 
-You can go [here](https://github.com/whippingdot/Language-Tutorials/tree/main/DSMD) to see the tutorial. You wil have everything from average tags to covered links. See you there!
-
-[//]: # ()
-
-[//]: # (Just put down the pip module thing, and the DSMDconfig.json stuff. Use the import json thing to parse their data.)
-
-[//]: # ()
-
-[//]: # (ALSO, make a code thingy so that you can allow DSMD users to make code blocks and stuff. IT WILL BE REALLY HARD LOL )
+You can go [here](https://github.com/whippingdot/Language-Tutorials/tree/main/DSMD) to see the tutorial. You will have everything from average tags to covered links. See you there!
 
 [//]: # ()
 
